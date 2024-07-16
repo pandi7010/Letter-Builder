@@ -44,15 +44,21 @@ function generateLetter() {
     const body = reasons[selectedReason];
 
     const letter = `
-        ${fromAddresses} (${fromQualifications}) ${fromPlaces}
-        ${date}
+    From,
+        ${fromAddresses} 
+        (${fromQualifications}) 
+        ${fromPlaces}
+        
         
         To,
-        ${toAddresses} (${toQualifications}) ${toPlaces}
+        ${toAddresses} 
+        (${toQualifications}) 
+        ${toPlaces}
         
-        Subject: ${subject}
+        
         
         Dear Sir/Madam,
+              Subject: ${subject}
 
         ${body}
         
@@ -61,6 +67,7 @@ function generateLetter() {
         Sincerely,
         <span style="font-family: 'Brush Script MT', cursive;">${signatureName}</span>
         
+        ${date}
         ${place}
     `.trim();
 
