@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter Builder</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Letter Builder</h1>
+        <form id="letterForm">
+            <div class="address-section" id="fromAddressSection">
+                <h3>From Address</h3>
+                <input type="text" class="name" placeholder="Name" required>
+                <input type="text" class="qualification" placeholder="Qualification" required>
+                <input type="text" class="place" placeholder="Place" required>
+            </div>
+            <div class="address-section" id="toAddressSection">
+                <h3>To Address</h3>
+                <input type="text" class="name" placeholder="Name" required>
+                <input type="text" class="qualification" placeholder="Qualification" required>
+                <input type="text" class="place" placeholder="Place" required>
+            </div>
+            <button type="button" class="add-button" onclick="addAddressLine()">Add Another Address Line</button>
+            <input type="text" id="subject" placeholder="Subject" required>
+            <input type="date" id="date" required>
+            <input type="text" id="signatureName" placeholder="Your Name" required>
+            <input type="text" id="place" placeholder="Place" required>
+            <select id="reason" required>
+                <option value="" disabled selected>Select Reason</option>
+                <option value="Sick Leave">Sick Leave</option>
+                <option value="Personal Leave">Personal Leave</option>
+                <option value="Vacation">Vacation</option>
+                <option value="Permission">Permission</option>
+                <option value="Apology">Apology</option>
+            </select>
+            <textarea id="body" placeholder="Additional details (optional)"></textarea>
+            <button type="button" class="generate-button" onclick="generateLetter()">Generate Letter</button>
+        </form>
+        <div id="letterPreview" class="letter-preview"></div>
+        <button id="downloadBtn" class="download-button" style="display:none;">Download as PDF</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
